@@ -1,39 +1,42 @@
-# Utility Ebustler Swiss Knife
+# Utility Ebustler Swiss Knife 🛠️
 
-A collection of utility scripts for various development tasks.
+A comprehensive collection of utility scripts designed to enhance developer productivity. Each script is crafted to solve specific development tasks and workflow challenges.
 
-## Git Aliases Installation
+## Available Utilities
 
-The repository includes a script to set up helpful Git aliases that make common Git operations faster and more convenient.
+### 1. Git Aliases (`install_git_aliases.sh`)
+Supercharge your Git workflow with a collection of time-saving aliases.
 
-### Installation
+#### Features
+- Quick commands for common Git operations
+- Smart branch management shortcuts
+- Advanced Git operation aliases
+- Utility commands for enhanced workflow
 
-1. Clone this repository
-2. Make the script executable:
-   ```bash
-   chmod +x install_git_aliases.sh
-   ```
-3. Run the installation script:
-   ```bash
-   ./install_git_aliases.sh
-   ```
+#### Installation
+```bash
+chmod +x install_git_aliases.sh
+./install_git_aliases.sh
+```
 
-### Available Aliases
+#### Available Aliases
+<details>
+<summary>Click to see all available Git aliases</summary>
 
-#### Basic Git Operations
+##### Basic Git Operations
 - `ga` - Stage all changes (`git add .`)
 - `gcm` - Commit with message (`git commit -m`)
 - `gp` - Push changes (`git push`)
 - `gpl` - Pull changes (`git pull`)
 - `gs` - Check status (`git status`)
 
-#### Branch Operations
+##### Branch Operations
 - `gb` - List branches (`git branch`)
 - `gco` - Checkout (`git checkout`)
 - `gbd` - Delete branch (`git branch -d`)
 - `gm` - Merge branch (`git merge`)
 
-#### Advanced Operations
+##### Advanced Operations
 - `gl` - Compact log view (`git log --oneline`)
 - `grh` - Hard reset (`git reset --hard`)
 - `grs` - Soft reset (`git reset --soft`)
@@ -43,7 +46,7 @@ The repository includes a script to set up helpful Git aliases that make common 
 - `grb` - Rebase (`git rebase`)
 - `grom` - Rebase on main (`git rebase origin/main`)
 
-#### Utility Commands
+##### Utility Commands
 - `gd` - Show changes (`git diff`)
 - `gf` - Fetch updates (`git fetch`)
 - `grv` - View remotes (`git remote -v`)
@@ -51,29 +54,32 @@ The repository includes a script to set up helpful Git aliases that make common 
 - `gignore` - Ignore changes to tracked file (`git update-index --assume-unchanged`)
 - `gunignore` - Stop ignoring changes (`git update-index --no-assume-unchanged`)
 
-### Usage
+</details>
 
-After installation, you can start using the aliases by either:
-1. Restarting your terminal
-2. Running: `source ~/.bashrc` (or your appropriate bash config file)
+## Contributing
 
-Example usage:
-```bash
-# Stage and commit changes
-ga
-gcm "Add new feature"
+Have a useful script to add? Here's how you can contribute:
 
-# Push to remote
-gp
+1. Fork the repository
+2. Create your script in an appropriately named directory
+3. Add documentation in the script and update this README
+4. Submit a pull request
 
-# Check status and log
-gs
-gl
+### Guidelines for New Scripts
+- Include clear documentation within the script
+- Add installation and usage instructions
+- Ensure cross-platform compatibility where possible
+- Add appropriate error handling
+- Include examples in documentation
 
-# Branch operations
-gco main
-gb
-gbd old-branch
-```
+## Coming Soon
+- File organization scripts
+- Development environment setup tools
+- Code formatting utilities
+- And more!
 
-The script will automatically detect your bash configuration file (`.bashrc` or `.bash_profile`) and install the aliases there. If aliases already exist, it will ask if you want to update them.
+## License
+MIT License - Feel free to use and modify these scripts for your needs.
+
+## Support
+Found a bug or have a suggestion? Open an issue in the repository!
