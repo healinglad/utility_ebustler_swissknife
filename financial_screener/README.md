@@ -1,126 +1,91 @@
-# Financial Screener
+# Financial Screener Utility
 
-A utility to fetch financial data from screener.in for Indian stocks, available as both a command-line tool and a GUI desktop widget.
+This utility fetches financial data from [screener.in](https://www.screener.in/) for Indian stocks. It provides both a command-line interface and a GUI desktop widget.
 
 ## Features
 
-- Search for a company by its trading symbol on screener.in
-- Extract financial parameters for the last 3 years
-- Provide key metrics:
-  - Return on Equity (ROE)
-  - 3-year growth rates
-  - Last two quarters' revenue and net profits
-  - Price/Earnings to Growth (PEG) ratio
+-   Fetches ROE (Return on Equity) for the last 3 years.
+-   Provides revenue and net profit for the last two quarters.
+-   Displays key financial metrics:
+    -   Stock P/E
+    -   Industry P/E
+    -   Compounded Sales Growth
+    -   Compounded Profit Growth
+    -   PEG Ratio
+-   Handles error cases with user-friendly messages.
+-   Supports both consolidated and standalone financial data.
 
 ## Installation
 
-1. Clone the repository or download the source code
-2. Install the required dependencies:
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/healinglad/financial-screener-utility.git
+    cd financial-screener-utility
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    pip install -r financial_screener/requirements.txt
+    ```
+
+## Usage
+
+### Command-Line Interface
 
 ```bash
-pip install -r requirements.txt
+# On Linux/macOS
+./financial_screener.sh SYMBOL
+
+# On Windows
+./financial_screener.bat SYMBOL
 ```
 
-## Command-Line Usage
+Replace `SYMBOL` with the stock symbol (e.g., `TATAMOTORS`, `VBL`, `RELIANCE`).
 
-Run the utility from the command line, providing a trading symbol as an argument:
+**Options:**
+
+-   `--delay SECONDS`: Delay between requests in seconds (default: 1).
+-   `--consolidated` / `--standalone`: Use consolidated or standalone financial data (default: consolidated).
+-   `--help`: Show help message.
+
+### GUI Desktop Widget
 
 ```bash
-python main.py SYMBOL
+# On Linux/macOS
+./financial_screener_gui.sh
+
+# On Windows
+./financial_screener_gui.bat
 ```
 
-For example, to get financial data for Tata Motors:
+The GUI allows you to enter a stock symbol, adjust the delay, toggle between consolidated and standalone data, and view the results.
 
-```bash
-python main.py TATAMOTORS
-```
+## Contributing
 
-## GUI Usage
-
-Run the GUI application to use the desktop widget:
-
-```bash
-python gui.py
-```
-
-The GUI provides a user-friendly interface where you can:
-- Enter a stock symbol and search for its financial data
-- View the results in a persistent window
-- Adjust delay settings and toggle between consolidated/standalone data
-- Clear results and perform multiple searches
-
-### Using the GUI
-
-1. Enter a stock symbol in the "Symbol" field (e.g., TATAMOTORS)
-2. Optionally adjust the delay time (in seconds) to avoid rate limiting
-3. Choose between consolidated or standalone financial data
-4. Click "Search" or press Enter to fetch the data
-5. View the results in the text area
-6. Use "Clear" to reset the results for a new search
-
-### Options
-
-- `--delay`: Set the delay between requests in seconds (default: 1)
-- `--consolidated/--standalone`: Use consolidated or standalone financial data (default: consolidated)
-
-```bash
-# Increase delay between requests
-python main.py TATAMOTORS --delay 2
-
-# Use standalone (non-consolidated) financial data
-python main.py TATAMOTORS --standalone
-```
-
-## Example Output
-
-```
-==================================================
-Financial Summary for Tata Motors Ltd
-==================================================
-
-ROE (Return on Equity):
-
-+-------+--------+--------+--------+
-| Metric | Mar 22 | Mar 23 | Mar 24 |
-+=======+========+========+========+
-| ROE    | 12.5%  | 15.2%  | 18.7%  |
-+-------+--------+--------+--------+
-
-3-Year Growth:
-
-+--------+--------+--------+--------+
-| Metric  | Mar 22 | Mar 23 | Mar 24 |
-+========+========+========+========+
-| Growth  | 8.2%   | 12.4%  | 15.8%  |
-+--------+--------+--------+--------+
-
-Last Two Quarters Revenue and Profit:
-
-+------------+-------------+-------------+
-| Metric     | Dec 23      | Mar 24      |
-+============+=============+=============+
-| Revenue    | 12,452 Cr   | 13,768 Cr   |
-+------------+-------------+-------------+
-| Net Profit | 1,451 Cr    | 1,875 Cr    |
-+------------+-------------+-------------+
-
-PEG Ratio: 1.25
-
-==================================================
-```
-
-## Requirements
-
-- Python 3.6+
-- Internet connection
-- Required Python packages (see requirements.txt)
-
-## Limitations
-
-- The utility relies on the structure of screener.in website, which may change over time
-- Some financial data may not be available for all companies
-- Rate limiting may be applied by screener.in for frequent requests
+Contributions are welcome! Please feel free to submit pull requests or open issues.
 
 ## License
 
 MIT License
+
+Copyright (c) 2025 [Your Name or Organization Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

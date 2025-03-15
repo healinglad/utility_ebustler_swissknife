@@ -4,7 +4,51 @@ A comprehensive collection of utility scripts designed to enhance developer prod
 
 ## Available Utilities
 
-### 1. Git Aliases (`install_git_aliases.sh`)
+### 1. Financial Screener (`financial_screener.sh` / `financial_screener.bat` / `financial_screener_gui.sh` / `financial_screener_gui.bat`)
+A utility to fetch financial data from screener.in for Indian stocks.
+
+#### Features
+- Search for a company by its trading symbol on screener.in
+- Extract financial parameters for the last 3 years
+- Provide key metrics:
+  - Return on Equity (ROE)
+  - 3-year growth rates
+  - Last two quarters' revenue and net profits
+  - Price/Earnings to Growth (PEG) ratio
+- Available as both command-line tool and GUI desktop widget
+
+#### Command-Line Usage
+```bash
+# On Linux/macOS
+./financial_screener.sh SYMBOL
+
+# On Windows
+financial_screener.bat SYMBOL
+```
+
+For example, to get financial data for Tata Motors:
+```bash
+./financial_screener.sh TATAMOTORS
+```
+
+#### GUI Usage
+```bash
+# On Linux/macOS
+./financial_screener_gui.sh
+
+# On Windows
+financial_screener_gui.bat
+```
+
+The GUI provides a desktop widget that allows you to:
+- Enter a stock symbol and search for its financial data
+- View the results in a persistent window
+- Adjust delay settings and toggle between consolidated/standalone data
+- Clear results and perform multiple searches
+
+For more details, see the [Financial Screener README](financial_screener/README.md).
+
+### 2. Git Aliases (`install_git_aliases.sh`)
 Supercharge your Git workflow with a collection of time-saving aliases.
 
 #### Features
